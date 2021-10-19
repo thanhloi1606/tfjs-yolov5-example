@@ -11,6 +11,8 @@ const setupCamera = () => {
     }
   ).then((stream) => {
     video.srcObject = stream;
+    videoPreview.srcObject = stream;
+
   });
 };
 
@@ -55,7 +57,7 @@ video.addEventListener("loadeddata", async () => {
   console.log('Loading model')
   model = await tf.loadGraphModel("https://raw.githubusercontent.com/Rimosolia/Mask-face-js/master/model.json");
   console.log("Load finished")
-  
+
   setInterval(() => {
     detectMask(model);
   }, 3000);
