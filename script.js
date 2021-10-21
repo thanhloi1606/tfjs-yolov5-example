@@ -11,7 +11,6 @@ const setupCamera = () => {
     }
   ).then((stream) => {
     video.srcObject = stream;
-    videoPreview.srcObject = stream;
 
   });
 };
